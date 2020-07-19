@@ -5,23 +5,9 @@
  * FIRST VERSION: 2020-07-17
  *+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
 
-/// 
-/// \class Shape
-///
-/// \brief The purpose of this class is to represent generic and specific types of shapes.
-///
-///
-/// - class constants
-/// - class data members (attributes) and their purpose
-/// - any methods (whose body is actually found within this definition) - you would comment in a <i>Method Header Commenting</i> style (see Dog() below)
-///
-/// When it comes to commenting the body of your code, or commenting anything within
-/// any of your source modules that you want DOxygen to ignore - simply use
-/// standard C++ comments
-///
-///
-/// \author Filipe Brito, <i>7843808</i>
-///
+
+//	Purpose: The purpose of this class is to be a container for other generic and specific types of shapes.
+
 #pragma once
 
 

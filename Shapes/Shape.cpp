@@ -6,7 +6,9 @@
  *+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
 
 ///
-/// \brief To instantiate a new Shape object.
+/// \class Shape
+///
+/// \brief Container for other generic and specific types of shapes.
 /// \details <b>Details</b>
 ///
 /// This class creates a Shape object with a name and colour string objects.
@@ -21,17 +23,15 @@
 /// \author Filipe Brito, <i>7843808</i>
 ///
 
-
 #include "Shape.h"
 
-
 ///
-///	\brief To validate if sent string is valid as per the name attribute standards.
-///	\details <b>Details</b>
-///	This method checks if the sent string is either Circle, Square or Unknown.
-///	\param name  - <b>std::string</b> - the name to be validated
+/// \brief To validate if sent string is valid as per the name attribute standards.
+/// \details <b>Details</b>
+/// This method checks if the sent string is either Circle, Square or Unknown.
+/// \param name  - <b>std::string</b> - the name to be validated
 ///
-///	\return <b>True</b>: Name is valid
+/// \return <b>True</b>: Name is valid
 /// \return <b>False</b>: Name is invalid
 ///
 /// \see SetName
@@ -52,15 +52,15 @@ bool Shape::validateName(std::string name)
 
 
 ///
-///	\brief To validate if sent string is valid as per the colour attribute standards.
-///	\details <b>Details</b>
-///	This method checks if the sent string is either red, green, blue, yellow, purple, pink, orange or undefined.
-///	\param colour - <b>std::string</b> - plain text with colour to be validated
+/// \brief To validate if sent string is valid as per the colour attribute standards.
+/// \details <b>Details</b>
+/// This method checks if the sent string is either red, green, blue, yellow, purple, pink, orange or undefined.
+/// \param colour - <b>std::string</b> - plain text with colour to be validated
 ///
-///	\return <b>True</b>: Name is valid.
-///	\return <b>False</b>: Name invalid.
+/// \return <b>True</b>: Name is valid.
+/// \return <b>False</b>: Name invalid.
 ///
-///	\see SetColour
+/// \see SetColour
 ///
 bool Shape::validateColour(std::string colour)
 {
@@ -142,15 +142,13 @@ Shape::Shape(std::string name, std::string colour)
 
 ///
 ///	\brief To instantiate a new Shape object - with default parameters.
-/// 
 ///	\details <b>Details</b>
 ///	This constructor takes no arguments.
 ///	The name attribute will be set to "Unknown".
 ///	The colour attribute will be set as "undefined".
+///	\param As this is a default <i>constructor</i> no parameter is required.
 ///
-/// \param As this is a default <i>constructor</i> no parameter is required.
-///
-///	\return As this is a <i>constructor</i>, nothing is returned.
+///	\return As this is a <i>constructor</i> for the Shape class, nothing is returned
 ///
 ///	\see ~Shape()
 ///
@@ -161,29 +159,29 @@ Shape::Shape(void)
 }
 
 ///
-///	\brief To <i>destroy</i> a Shape object.
-///	\details <b>Details</b>
-///	Allocated memory for the object will be deallocated.
+/// \brief To <i>destroy</i> a Shape object.
+/// \details <b>Details</b>
+/// Allocated memory for the object will be deallocated.
 ///
 /// \param As this is a <i>destructor</i> no parameter is required.
 ///
-///	\return As this is a <i>destructor</i> for the Shape class, nothing is returned.
+/// \return As this is a <i>destructor</i> for the Shape class, nothing is returned.
 ///
-///	\see Shape()
+/// \see Shape()
 ///
 Shape::~Shape()
 {
 }
 
 ///
-///	\brief This method returns the name of the shape.
-///	\details <b>Details</b>
-///	Returns a string object with the name of the shape.
-///	\param <b>Void</b>
+/// \brief This method returns the name of the shape.
+/// \details <b>Details</b>
+/// Returns a string object with the name of the shape.
+/// \param <b>Void</b>
 ///
-///	\return <b>std::string</b> - string object with the name attribute
+/// \return <b>std::string</b> - string object with the name attribute
 ///
-///	\see SetName
+/// \see SetName
 ///
 std::string Shape::GetName(void)
 {
@@ -192,14 +190,14 @@ std::string Shape::GetName(void)
 
 
 ///
-///	\brief This method returns the colour of the shape.
-///	\details <b>Details</b>
-///	Returns a string object with the colour of the shape.
-///	\param <b>Void</b>
+/// \brief This method returns the colour of the shape.
+/// \details <b>Details</b>
+/// Returns a string object with the colour of the shape.
+/// \param <b>Void</b>
 ///
-///	\return <b>std::string</b> - string object with the colour attribute
+/// \return <b>std::string</b> - string object with the colour attribute
 ///
-///	\see SetColour
+/// \see SetColour
 ///
 std::string Shape::GetColour(void)
 {
@@ -208,17 +206,17 @@ std::string Shape::GetColour(void)
 
 
 ///
-///	\brief Assigns the name attribute of a Shape object.
-///	\details <b>Details</b>
-///	This method checks if the name is valid and assigns it to the name attribute.
+/// \brief Assigns the name attribute of a Shape object.
+/// \details <b>Details</b>
+/// This method checks if the name is valid and assigns it to the name attribute.
 /// If the value is invalid it does nothing.
 ///
-///	\param name  - <b>std::string</b> - plain text, name to be set as name attribute
+/// \param name  - <b>std::string</b> - plain text, name to be set as name attribute
 ///
-///	\return <b>True</b>: Name is valid.
+/// \return <b>True</b>: Name is valid.
 /// \return <b>False</b>: Name is invalid.
 ///
-///	\see validateName
+/// \see validateName
 ///
 void Shape::SetName(std::string name)
 {
@@ -230,16 +228,16 @@ void Shape::SetName(std::string name)
 
 
 ///
-///	\brief Assigns the colour of a Shape object.
-///	\details <b>Details</b>
-///	This method checks if the colour is valid and assigns it to the colour attribute.
+/// \brief Assigns the colour of a Shape object.
+/// \details <b>Details</b>
+/// This method checks if the colour is valid and assigns it to the colour attribute.
 /// If the value is invalid it does nothing.
 ///
-///	\param colour  - <b>std::string</b> - plain text, colour to be set as colour attribute
+/// \param colour - <b>std::string</b> - plain text, colour to be set as colour attribute
 ///
-///	\return <b>Void</b>
+/// \return <b>Void</b>
 ///
-///	\see GetColour
+/// \see GetColour
 ///
 void Shape::SetColour(std::string colour)
 {

@@ -1,5 +1,4 @@
 /// \mainpage Shapes project   
-/// \image image shapeslogo.png
 ///
 ///
 /// \section intro Program Introduction
