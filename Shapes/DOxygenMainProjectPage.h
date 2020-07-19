@@ -1,5 +1,4 @@
 /// \mainpage Shapes project   
-/// \note I can include an image anywhere I want in my DOxygen comments by simply using the "\image" command
 /// \image image shapeslogo.png
 ///
 ///
@@ -10,7 +9,7 @@
 ///
 /// <hr>
 /// \section notes Special Release Notes
-/// - first version launched. <A target=blank HREF="https://github.com/madfilipe/Shapes/"> hello_world</A>
+/// - <A target=blank HREF="https://github.com/madfilipe/Shapes/"> hello_world</A>. First version launched.
 ///
 ///
 /// <hr>
@@ -20,7 +19,6 @@
 /// Encapsulation must be respected.
 ///
 ///
-/// <b>Todo
 /// <hr> 
 /// \todo Make sure to deallocate allocated memory.
 ///
@@ -34,8 +32,8 @@
 /// <li>\authors   <b><i>Filipe Brito</i></b> 7843808!!</li>
 /// <li>\version   1.00.00</li>
 /// <li>\date      2020-2020</li>
-/// <li>\pre       In order to use the <i>Shapes</i> - you must first start with a shape</li>
-/// <li>\warning   Improper use of the <i>Shapes</i> project may result in getting <b>hit</b></li>
+/// <li>\pre       In order to use the <i>Shapes</i> - you must compile it with Visual Studio</li>
+/// <li>\warning   Improper usage of the <i>Shapes</i> project may result in getting <b>hit</b></li>
 /// <li>\copyright Filipe Brito's team of one man.</li>
 /// </ul>
 ///

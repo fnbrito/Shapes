@@ -30,7 +30,6 @@
 ///	\return <b>True</b>: Value is valid
 /// \return <b>False</b>: Value is invalid
 ///
-///	\see radius
 /// \see SetRadius
 ///
 bool Circle::validateRadius(float radius)
@@ -111,7 +110,6 @@ Circle::~Circle()
 ///
 ///	\return <b>float</b> - float variable with the radius value
 ///
-/// \see radius
 ///	\see SetRadius
 ///
 float Circle::GetRadius(void)
@@ -130,7 +128,6 @@ float Circle::GetRadius(void)
 ///
 ///	\return <b>Void</b>
 ///
-/// \see name
 ///	\see validateName
 ///
 void Circle::SetRadius(float radiusInCentimeters)

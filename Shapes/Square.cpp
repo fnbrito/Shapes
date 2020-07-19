@@ -26,7 +26,6 @@
 ///	\return <b>True</b>: Value is valid
 /// \return <b>False</b>: Value is invalid
 ///
-///	\see sideLength
 /// \see SetSideLength
 ///
 bool Square::validateSideLength(float sideLength)
@@ -113,7 +112,6 @@ Square::~Square()
 ///
 ///	\return <b>float</b> - float variable with the side-length value
 ///
-/// \see sideLength
 ///	\see SetRadius
 ///
 float Square::GetSideLength(void)
@@ -132,7 +130,6 @@ float Square::GetSideLength(void)
 ///
 ///	\return <b>Void</b>
 ///
-/// \see name
 ///	\see validateName
 ///
 void Square::SetSideLength(float sideLength)

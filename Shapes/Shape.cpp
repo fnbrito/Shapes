@@ -34,7 +34,6 @@
 ///	\return <b>True</b>: Name is valid
 /// \return <b>False</b>: Name is invalid
 ///
-///	\see name
 /// \see SetName
 ///
 bool Shape::validateName(std::string name)
@@ -59,9 +58,8 @@ bool Shape::validateName(std::string name)
 ///	\param colour - <b>std::string</b> - plain text with colour to be validated
 ///
 ///	\return <b>True</b>: Name is valid.
-/// \return <b>False</b>: Name invalid.
+///	\return <b>False</b>: Name invalid.
 ///
-/// \see colour
 ///	\see SetColour
 ///
 bool Shape::validateColour(std::string colour)
@@ -144,6 +142,7 @@ Shape::Shape(std::string name, std::string colour)
 
 ///
 ///	\brief To instantiate a new Shape object - with default parameters.
+/// 
 ///	\details <b>Details</b>
 ///	This constructor takes no arguments.
 ///	The name attribute will be set to "Unknown".
@@ -184,7 +183,6 @@ Shape::~Shape()
 ///
 ///	\return <b>std::string</b> - string object with the name attribute
 ///
-/// \see name
 ///	\see SetName
 ///
 std::string Shape::GetName(void)
@@ -201,7 +199,6 @@ std::string Shape::GetName(void)
 ///
 ///	\return <b>std::string</b> - string object with the colour attribute
 ///
-/// \see colour
 ///	\see SetColour
 ///
 std::string Shape::GetColour(void)
@@ -221,7 +218,6 @@ std::string Shape::GetColour(void)
 ///	\return <b>True</b>: Name is valid.
 /// \return <b>False</b>: Name is invalid.
 ///
-/// \see name
 ///	\see validateName
 ///
 void Shape::SetName(std::string name)
@@ -243,7 +239,6 @@ void Shape::SetName(std::string name)
 ///
 ///	\return <b>Void</b>
 ///
-/// \see colour
 ///	\see GetColour
 ///
 void Shape::SetColour(std::string colour)
