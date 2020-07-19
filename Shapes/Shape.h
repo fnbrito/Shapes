@@ -1,3 +1,10 @@
+/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+,
+ * FILE         : Shape.h
+ * PROJECT      : OOP - Assignment 4
+ * PROGRAMMER   : Filipe Brito
+ * FIRST VERSION: 2020-07-17
+ *+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
+
 /// 
 /// \class Shape
 ///
@@ -17,6 +24,7 @@
 ///
 #pragma once
 
+
 #include <string>
 
 
@@ -26,15 +34,24 @@ class Shape
 	/*                PRIVATE                */
 	/* ===================================== */
 private:
-	/* ------------- ATTRIBUTES ------------ */
-	std::string name;	///< Used to store the name of the shape. It can either be Circle, Square or Unknown. If invalid, Unknown is used.
-	std::string colour;	///< Used to store the colour of the shape. It can either be red, green, blue, yellow, purple, pink, orange or undefined. If invalid, undefined is used.
-	int test;
+
 	/* ============== METHODS ============== */
 
 	/* ------------- VALIDATOR ------------- */
-	int validateName(char* name);
-	int validateColour(char* colour);
+	bool validateName(std::string name);
+	bool validateColour(std::string colour);
+
+
+
+	/* ===================================== */
+	/*               PROTECTED               */
+	/* ===================================== */
+
+protected:
+	/* ------------- ATTRIBUTES ------------ */
+	std::string name;	///< Used to store the name of the shape. It can either be Circle, Square or Unknown. If invalid, Unknown is used.
+	std::string colour;	///< Used to store the colour of the shape. It can either be red, green, blue, yellow, purple, pink, orange or undefined. If invalid, undefined is used.
+
 
 
 	/* ===================================== */
@@ -45,21 +62,22 @@ public:
 	/* ============== METHODS ============== */
 
 	/* ------------ CONSTRUCTOR ------------ */
-	Shape(std::string& name, std::string& colour);
+	Shape(std::string name, std::string colour);
 	Shape();
+
 	/* ------------- DESTRUCTOR ------------ */
 	~Shape();
 
 	/* -------------- ACCESSOR ------------- */
-	char* GetName(std::string& name);
-	char* GetColour(std::string& colour);
+	std::string GetName(void);
+	std::string GetColour(void);
 
 	/* -------------- MUTATOR -------------- */
-	void SetName(std::string& name);
-	void SetColour(std::string& colour);
+	void SetName(std::string name);
+	void SetColour(std::string colour);
 
-	/* -------------- VIRTUAL -------------- */
-	virtual void Perimeter(void);
-	virtual void Area(void);
-	virtual void OverallDimension(void);
+	/* ------------ PURE VIRTUAL ----------- */
+	virtual float Perimeter(void) = 0;
+	virtual float Area(void) = 0;
+	virtual float OverallDimension(void) = 0;
 };
