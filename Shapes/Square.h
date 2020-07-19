@@ -27,7 +27,7 @@ class Square :
 private:
 	/* ============= ATTRIBUTES ============ */
 
-	float sideLength;
+	float sideLength; ///< used as the side-length value. Must be bigger than 0.0
 
 	/* ============== METHODS ============== */
 

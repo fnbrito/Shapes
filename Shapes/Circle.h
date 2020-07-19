@@ -28,7 +28,7 @@ private:
 	
 	/* ============= ATTRIBUTES ============ */
 
-	float radius; ///<Used to store the circle's radius in centimeters.
+	float radius; ///<Used to store the circle's radius in centimeters. Must be bigger than 0.0.
 	
 	
 	/* ============== METHODS ============== */

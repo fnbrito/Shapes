@@ -18,7 +18,7 @@
 #include "Circle.h"
 
 /* -------------- CONSTANT ------------- */
-#define PI 3.1415926
+#define PI 3.1415926 ///<Constant value for <b>PI</b>.
 
 ///
 ///	\brief To validate if sent radius is valid as per the radius attribute standards.
