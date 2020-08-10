@@ -20,25 +20,15 @@ class Shape
 	/*                PRIVATE                */
 	/* ===================================== */
 private:
+	/* ------------- ATTRIBUTES ------------ */
+	std::string name;	///< Used to store the name of the shape. It can either be Circle, Square or Unknown. If invalid, Unknown is used.
+	std::string colour;	///< Used to store the colour of the shape. It can either be red, green, blue, yellow, purple, pink, orange or undefined. If invalid, undefined is used.
 
 	/* ============== METHODS ============== */
 
 	/* ------------- VALIDATOR ------------- */
 	bool validateName(std::string name);
 	bool validateColour(std::string colour);
-
-
-
-	/* ===================================== */
-	/*               PROTECTED               */
-	/* ===================================== */
-
-protected:
-	/* ------------- ATTRIBUTES ------------ */
-	std::string name;	///< Used to store the name of the shape. It can either be Circle, Square or Unknown. If invalid, Unknown is used.
-	std::string colour;	///< Used to store the colour of the shape. It can either be red, green, blue, yellow, purple, pink, orange or undefined. If invalid, undefined is used.
-
-
 
 	/* ===================================== */
 	/*                PUBLIC                 */
@@ -52,11 +42,11 @@ public:
 	Shape();
 
 	/* ------------- DESTRUCTOR ------------ */
-	~Shape();
+	virtual ~Shape();
 
 	/* -------------- ACCESSOR ------------- */
-	std::string GetName(void);
-	std::string GetColour(void);
+	std::string GetName(void) const;
+	std::string GetColour(void) const;
 
 	/* -------------- MUTATOR -------------- */
 	void SetName(std::string name);

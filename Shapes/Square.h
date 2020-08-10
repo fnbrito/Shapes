@@ -6,20 +6,22 @@
  *+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
 
 
-//	Purpose: The purpose of this class is to represent a square type of shape.
+//	Purpose: The purpose of this class is to represent a shape of type square.
 
 #pragma once
 #include "Shape.h"
 class Square :
 	public Shape
-{	
+{
+private:
 	/* ===================================== */
 	/*                PRIVATE                */
 	/* ===================================== */
-private:
+
 	/* ============= ATTRIBUTES ============ */
 
 	float sideLength; ///< used as the side-length value. Must be bigger than 0.0
+
 
 	/* ============== METHODS ============== */
 
@@ -27,30 +29,37 @@ private:
 
 	bool validateSideLength(float sideLength);
 
-
+public:
 	/* ===================================== */
 	/*                PUBLIC                 */
 	/* ===================================== */
-public:
 
 	/* ============== METHODS ============= */
 
 	/* ------------ CONSTRUCTOR ------------ */
-	Square();
+	Square(void);
 	Square(std::string colour, float sideLength);
-	
+	Square(const Square& copyFrom);
+
 	/* ------------ DESTRUCTOR ------------- */
-	~Square();
+	virtual ~Square();
+
+	/* ------------- OPERATOR -------------- */
+	Square operator+ (const Square& op2);
+	Square operator* (const Square& op2);
+	const Square& operator= (const Square& op2);
+	bool operator== (const Square& op2);
+
 
 	/* ------------- ACCESSOR -------------- */
-	float GetSideLength(void);
+	float GetSideLength(void) const;
 	
 	/* -------------- MUTATOR -------------- */
 	void SetSideLength(float sideLength);
 	
 	/* ----------- OTHER METHODS ----------- */
 	void Show(void);
-	float Perimeter(void);
-	float Area(void);
-	float OverallDimension(void);
+	virtual float Perimeter(void);
+	virtual float Area(void);
+	virtual float OverallDimension(void);
 };

@@ -5,6 +5,7 @@
  * FIRST VERSION: 2020-07-17
  *+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
 
+
 ///
 /// \class Circle
 ///
@@ -21,6 +22,7 @@
 
 /* -------------- CONSTANT ------------- */
 #define PI 3.1415926 ///< Constant value for <b>PI</b>.
+
 
 ///
 /// \brief To validate if sent radius is valid as per the radius attribute standards.
@@ -44,7 +46,7 @@ bool Circle::validateRadius(float radius)
 
 
 ///
-/// \brief To instantiate a new Circle object - given a color and a value for radius.
+/// \brief To <i>instantiate</i> a new Circle object - given a color and a value for radius.
 /// \details <b>Details</b>
 /// This constructor takes a string object for the colour and a float for the radius.
 /// The colour should either be red, green, blue, yellow, purple, pink, orange or undefined. Otherwise it will be set to "undefined".
@@ -57,7 +59,7 @@ bool Circle::validateRadius(float radius)
 ///
 /// \see ~Circle()
 ///
-Circle::Circle(std::string colour, float radius) : Shape((std::string)"Circle", colour)
+Circle::Circle(std::string colour, float radius) : Shape("Circle", colour)
 {
 	if (radius >= 0.0)
 		this->radius = radius;
@@ -67,7 +69,7 @@ Circle::Circle(std::string colour, float radius) : Shape((std::string)"Circle", 
 
 
 ///
-/// \brief To instantiate a new Circle object - with default parameters.
+/// \brief To <i>instantiate</i> a new Circle object - with default parameters.
 /// \details <b>Details</b>
 /// This constructor takes no arguments.
 /// The name attribute will be set to "Circle", the color to "undefined", and radius to 0.0.
@@ -78,11 +80,29 @@ Circle::Circle(std::string colour, float radius) : Shape((std::string)"Circle", 
 ///
 /// \see ~Circle()
 ///
-Circle::Circle() : Shape()
+Circle::Circle(void) : Shape("Circle", "undefined")
 {
-	this->name = "Circle";
-	this->colour = "undefined";
 	this->radius = 0.0;
+}
+
+
+///
+/// \brief To <i>instantiate</i> a new Circle object - copying from another circle object.
+/// \details <b>Details</b>
+/// This constructor takes an object of type circle as argument.
+/// The name, colour and radius attributes will be set to the same as the object referenced.
+///
+/// \param const Circle& - copyFrom : object to be copied into <i>current</i> object.
+///
+/// \return As this is a <i>constructor</i> for the Circle class, nothing is returned
+///
+/// \see ~Circle()
+///
+Circle::Circle(const Circle& copyFrom) // copy constructor
+{
+	this->SetName(copyFrom.GetName());
+	this->SetColour(copyFrom.GetColour());
+	this->SetRadius(copyFrom.GetRadius());
 }
 
 
@@ -104,6 +124,100 @@ Circle::~Circle()
 
 
 ///
+/// \brief Overloading of operator '<i>+</i>'.
+/// \details <b>Details</b>
+/// Allows the sum of Circle objects.
+/// The resultant object takes up the color of the left-hand operand and the radii of both operands are added together.
+///
+/// \param const Circle& - op2 : constant reference to a Circle object (<i>RHS operand</i>).
+///
+/// \return <b>Circle : A circle object with the sum of <i>LHS operand</i> and the <i>RHS operand</i>.</b>
+///
+/// \see Circle()
+///
+Circle Circle::operator+ (const Circle& op2)
+{
+	Circle temp;
+	temp.SetColour(this->GetColour());
+	temp.SetName(this->GetName());
+	temp.SetRadius(this->GetRadius() + op2.GetRadius());
+	return temp;
+}
+
+
+///
+/// \brief Overloading of operator '<i>*</i>'.
+/// \details <b>Details</b>
+/// Allows the multiplication of Circle objects.
+/// The resultant circle takes up the colour of the right-hand operand and the radii of the operands are multiplied.
+///
+/// \param const Circle& - op2 : constant reference to a Circle object (<i>RHS operand</i>).
+///
+/// \return <b>Circle : A circle object with the multiplication of <i>LHS operand</i> and the <i>RHS operand</i>.</b>
+///
+/// \see Circle()
+///
+Circle Circle::operator* (const Circle& op2)
+{
+	Circle temp;
+	temp.SetName(this->GetName());
+	temp.SetColour(op2.GetColour());
+	temp.SetRadius(this->GetRadius() * op2.GetRadius());
+	return temp;
+}
+
+
+///
+/// \brief Overloading of operator '<i>=</i>'.
+/// \details <b>Details</b>
+/// Allows the assignment of Circle objects.
+///
+/// \param const Circle& - op2 : constant reference to a Circle object (<i>RHS operand</i>).
+///
+/// \return <b>const Circle& : A circle object copied from <i>RHS operand</i> to be assigned into the <i>LHS operand</i>.</b>
+///
+/// \see Circle()
+///
+const Circle& Circle::operator= (const Circle& op2)
+{
+	this->SetRadius(op2.GetRadius());
+	this->SetName(op2.GetName());
+	this->SetColour(op2.GetColour());
+	return *this;
+}
+
+
+///
+/// \brief Overloading of operator '<i>==</i>'.
+/// \details <b>Details</b>
+/// Allows the comparison of Circle objects.
+/// Compares if the radius and colour members of two circles are the same.
+///
+/// \param const Circle& - op2 : constant reference to a Circle object (<i>RHS operand</i>).
+///
+/// \return <b>TRUE : The objects are considered equal.</b>
+///			<b>FALSE: The objects are considered unequal.</b>
+///
+/// \see Circle()
+///
+bool Circle::operator== (const Circle& op2)
+{
+	bool retCode;
+	if ((this->GetRadius() == op2.GetRadius()) &&
+		(this->GetColour() == op2.GetColour()))
+	{
+		retCode = true;
+	}
+	else
+	{
+		retCode = false;
+	}
+
+	return (retCode);
+}
+
+
+///
 /// \brief This method returns the radius of the circle.
 /// \details <b>Details</b>
 /// Returns a float with the value of the radius attribute.
@@ -114,7 +228,7 @@ Circle::~Circle()
 ///
 /// \see SetRadius
 ///
-float Circle::GetRadius(void)
+float Circle::GetRadius(void) const
 {
 	return radius;
 }
@@ -159,8 +273,9 @@ void Circle::Show(void)
 		"Colour		: %s\n"
 		"Radius		: %.2f cm\n"
 		"Circumference	: %.2f cm\n"
-		"Area		: %.2f square cm\n\n", name.c_str(), colour.c_str(), GetRadius(), Perimeter(), Area());
+		"Area		: %.2f square cm\n\n", GetName().c_str(), GetColour().c_str(), GetRadius(), Perimeter(), Area());
 }
+
 
 ///
 /// \brief Returns the Circumference of the object.
@@ -178,6 +293,7 @@ float Circle::Perimeter(void)
 	return 2 * (float)PI * radius;
 }
 
+
 ///
 /// \brief Returns the area of the object.
 /// \details <b>Details</b>
@@ -193,6 +309,7 @@ float Circle::Area(void)
 {
 	return (float)PI * (radius * radius);
 }
+
 
 ///
 /// \brief Returns the diameter of the object.

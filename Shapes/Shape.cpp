@@ -5,6 +5,7 @@
  * FIRST VERSION: 2020-07-17
  *+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
 
+
 ///
 /// \class Shape
 ///
@@ -24,6 +25,7 @@
 ///
 
 #include "Shape.h"
+
 
 ///
 /// \brief To validate if sent string is valid as per the name attribute standards.
@@ -80,6 +82,7 @@ bool Shape::validateColour(std::string colour)
 	}
 	return false;
 }
+
 
 ///
 ///	\brief To instantiate a new Shape object - given a name and a colour.
@@ -140,6 +143,7 @@ Shape::Shape(std::string name, std::string colour)
 
 }
 
+
 ///
 ///	\brief To instantiate a new Shape object - with default parameters.
 ///	\details <b>Details</b>
@@ -158,6 +162,7 @@ Shape::Shape(void)
 	this->colour = "undefined";
 }
 
+
 ///
 /// \brief To <i>destroy</i> a Shape object.
 /// \details <b>Details</b>
@@ -173,6 +178,7 @@ Shape::~Shape()
 {
 }
 
+
 ///
 /// \brief This method returns the name of the shape.
 /// \details <b>Details</b>
@@ -183,7 +189,7 @@ Shape::~Shape()
 ///
 /// \see SetName
 ///
-std::string Shape::GetName(void)
+std::string Shape::GetName(void) const
 {
 	return this->name;
 }
@@ -199,7 +205,7 @@ std::string Shape::GetName(void)
 ///
 /// \see SetColour
 ///
-std::string Shape::GetColour(void)
+std::string Shape::GetColour(void) const
 {
 	return this->colour;
 }

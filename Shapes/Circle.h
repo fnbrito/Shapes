@@ -6,17 +6,17 @@
  *+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
 
 
-//	Purpose: The purpose of this class is to represent a circle type of shape.
+//	Purpose: The purpose of this class is to represent a shape of type circle.
 
 #pragma once
 #include "Shape.h"
 class Circle :
 	public Shape
 {
+private:
 	/* ===================================== */
 	/*                PRIVATE                */
 	/* ===================================== */
-private:
 	
 	/* ============= ATTRIBUTES ============ */
 
@@ -31,30 +31,39 @@ private:
 
 
 
+
+public:
 	/* ===================================== */
 	/*                PUBLIC                 */
 	/* ===================================== */
-public:
 
 	/* ============== METHODS ============= */
 
 	/* ------------ CONSTRUCTOR ------------ */
 	Circle(std::string colour, float radius);
-	Circle();
+	Circle(void);
+	Circle(const Circle& copyFrom);
 
 	/* ------------ DESTRUCTOR ------------- */
-	~Circle();
+	virtual ~Circle();
+
+	/* ------------- OPERATOR -------------- */
+	Circle operator+ (const Circle& op2);
+	Circle operator* (const Circle& op2);
+	const Circle& operator= (const Circle& op2);
+	bool operator== (const Circle& op2);
+
 
 	/* ------------- ACCESSOR -------------- */
-	float GetRadius(void);
+	float GetRadius(void) const;
 
 	/* -------------- MUTATOR -------------- */
 	void SetRadius(float radiusInCentimeters);
-	void Show(void);
 
 	/* ----------- OTHER METHODS ----------- */
-	float Perimeter(void);
-	float Area(void);
-	float OverallDimension(void);
+	void Show(void);
+	virtual float Perimeter(void);
+	virtual float Area(void);
+	virtual float OverallDimension(void);
 };
 
