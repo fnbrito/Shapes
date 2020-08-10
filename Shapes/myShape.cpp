@@ -1,21 +1,20 @@
 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+,
  * FILE         : myShape.cpp
- * PROJECT      : OOP - Assignment 4
+ * PROJECT      : OOP - Assignment 7
  * PROGRAMMER   : Filipe Brito
  * FIRST VERSION: 2020-07-17
  * DESCRIPTION	: This is the test harness
  *	source. This file drives the usage of the
- *	Circle and Square classes, getting input
- *	from the user and instantiating objects with
- *	that input.
+ *	Circle and Square classes, this time with no
+ *  input from the user and instantiating objects with
+ *	pre-chosen values.
  *+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
 
 
-#include <stdio.h>
 #include <stdlib.h>
+#include <new>
 #include "Circle.h"
 #include "Square.h"
-#include <new>
 
 
 // local function prototypes
@@ -77,11 +76,11 @@ int main(void)
 	*playARound = *round1;
 	if (*playARound == *round1) // checks if they are the same
 	{
-		printf("Hurray !!");
+		printf("Hurray !!\n");
 	}
 	else
 	{
-		printf("Aww !!");
+		printf("Aww !!\n");
 	}
 
 

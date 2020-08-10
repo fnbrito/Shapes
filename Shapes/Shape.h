@@ -1,6 +1,6 @@
 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+,
  * FILE         : Shape.h
- * PROJECT      : OOP - Assignment 4
+ * PROJECT      : OOP - Assignment 7
  * PROGRAMMER   : Filipe Brito
  * FIRST VERSION: 2020-07-17
  *+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
